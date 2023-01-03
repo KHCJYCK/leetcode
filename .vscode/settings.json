@@ -1,0 +1,24 @@
+{
+    "files.associations": {
+        "vector": "cpp",
+        "xstring": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "xutility": "cpp",
+        "xhash": "cpp",
+        "utility": "cpp",
+        "limits": "cpp",
+        "algorithm": "cpp",
+        "list": "cpp",
+        "queue": "cpp",
+        "array": "cpp",
+        "chrono": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "string_view": "cpp",
+        "*.tcc": "cpp",
+        "new": "cpp"
+    }
+}
