@@ -38,11 +38,45 @@ TreeNode* construct_binary_tree(const vector<int>& vec) {
     }
     return root;
 }
+class UF{
+public:
+    vector<int> parents;
+    int count;
+    UF(int n){
+        count = n;
+        parents.resize(n);
+        for(int i = 0; i < n; i++)
+            parents[i] = i;
+    }
+    void connect(int p, int q){
+        int rootp = find(p);
+        int rootq = find(q);
+        if(rootp == rootq)
+            return;
+        parents[rootp] = rootq;
+        count--;
+    }
+    int find(int p){
+        if(parents[p] != p)
+            parents[p] = find(parents[p]);
+        return parents[p];
+    }
+    bool is_connected(int p, int q){
+        int rootp = find(p);
+        int rootq = find(q);
+        return rootp == rootq;
+    }
+    int get_count(){
+        return count;
+    }
+};
 
 
 
 int main(){
-    vector<int> vec{1,2,3,-1,-1,4,5};
-    TreeNode* root = construct_binary_tree(vec);
+    vector<vector<int>> points{{0,0},{2,2},{3,10},{5,2},{7,0}};
+    sort(points.begin(), points.end(),[](auto lhs, auto rhs){
+        return lhs[1] < rhs[1];
+    });
     return 0;
 }
